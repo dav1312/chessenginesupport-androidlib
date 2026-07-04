@@ -5,7 +5,7 @@
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="Stockfish Chess Engine"
-        android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+        android:theme="@android:style/Theme.DeviceDefault" >
         <activity
             android:name="com.kalab.chess.stockfishengine.MainActivity"
             android:label="Stockfish Chess Engine"

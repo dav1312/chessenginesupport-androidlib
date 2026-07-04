@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="#121212">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:padding="24dp">
+
+        <!-- Stockfish Logo -->
+        <ImageView
+            android:id="@+id/logoImage"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="16dp"
+            android:contentDescription="Stockfish Logo"
+            android:src="@drawable/ic_launcher" />
+
+        <!-- Engine Title -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Stockfish Chess Engine"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Informational Explanation Text -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="This application is a backend chess engine and does not contain a playable graphical user interface (GUI).\n\nTo play against Stockfish or analyze games, you must install a separate Chess GUI application, then select Stockfish inside that application's settings."
+            android:textSize="15sp"
+            android:textColor="#CCCCCC"
+            android:gravity="center"
+            android:lineSpacingMultiplier="1.2"
+            android:layout_marginBottom="32dp" />
+
+        <!-- Section 1: Chess GUIs -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Download a Compatible Chess GUI"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:gravity="center_horizontal"
+            android:layout_marginBottom="12dp" />
+
+        <Button
+            android:id="@+id/btnChessis"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Get Chessis (Google Play)"
+            android:textAllCaps="false"
+            android:layout_marginBottom="8dp" />
+
+        <Button
+            android:id="@+id/btnDroidFish"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Get DroidFish (F-Droid)"
+            android:textAllCaps="false"
+            android:layout_marginBottom="8dp" />
+
+        <Button
+            android:id="@+id/btnWikiMobile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Other Compatible GUIs (Wiki)"
+            android:textAllCaps="false"
+            android:layout_marginBottom="32dp" />
+
+        <!-- Section 2: Official Links -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Official Stockfish Resources"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:gravity="center_horizontal"
+            android:layout_marginBottom="12dp" />
+
+        <Button
+            android:id="@+id/btnDocs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Documentation"
+            android:textAllCaps="false"
+            android:layout_marginBottom="8dp" />
+
+        <Button
+            android:id="@+id/btnDiscord"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Join Discord Server"
+            android:textAllCaps="false"
+            android:layout_marginBottom="8dp" />
+
+        <Button
+            android:id="@+id/btnLicense"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="View License (GPLv3)"
+            android:textAllCaps="false"
+            android:layout_marginBottom="24dp" />
+
+    </LinearLayout>
+</ScrollView>
