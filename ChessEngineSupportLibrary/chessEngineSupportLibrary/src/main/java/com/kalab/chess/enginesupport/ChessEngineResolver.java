@@ -50,7 +50,11 @@ public class ChessEngineResolver {
 	public ChessEngineResolver(Context context) {
 		super();
 		this.context = context;
-		this.target = Build.CPU_ABI; // use Build.SUPPORTED_ABIS[0] from API level 21 onwards
+		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+			this.target = Build.SUPPORTED_ABIS[0];
+		} else {
+			this.target = Build.CPU_ABI;
+		}
 		sanitizeArmV6Target();
 	}
 

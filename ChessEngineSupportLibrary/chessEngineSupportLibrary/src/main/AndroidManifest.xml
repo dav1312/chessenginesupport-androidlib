@@ -1,5 +1,14 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.kalab.chess.enginesupport">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <queries>
+        <!-- Grants package visibility to other apps declaring chess engine/activation intents -->
+        <intent>
+            <action android:name="intent.chess.provider.ENGINE" />
+        </intent>
+        <intent>
+            <action android:name="intent.chess.provider.ACTIVATION" />
+        </intent>
+    </queries>
 
     <application>
     </application>

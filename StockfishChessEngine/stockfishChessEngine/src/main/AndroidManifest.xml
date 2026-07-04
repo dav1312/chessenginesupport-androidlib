@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.kalab.chess.stockfishengine"
-    android:versionCode="1"
-    android:versionName="10" >
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <application
         android:allowBackup="true"
@@ -11,11 +8,11 @@
         android:theme="@android:style/Theme.Translucent.NoTitleBar" >
         <activity
             android:name="com.kalab.chess.stockfishengine.MainActivity"
-            android:label="Stockfish Chess Engine" >
+            android:label="Stockfish Chess Engine"
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
             <intent-filter>
                 <action android:name="intent.chess.provider.ENGINE" />
