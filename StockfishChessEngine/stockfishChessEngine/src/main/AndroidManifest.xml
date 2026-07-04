@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="Stockfish Chess Engine"
-        android:theme="@android:style/Theme.DeviceDefault" >
+        android:theme="@android:style/Theme.DeviceDefault"
+        android:extractNativeLibs="true"
+        tools:replace="android:extractNativeLibs" >
         <activity
             android:name="com.kalab.chess.stockfishengine.MainActivity"
             android:label="Stockfish Chess Engine"
