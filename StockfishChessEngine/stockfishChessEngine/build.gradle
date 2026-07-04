@@ -4,12 +4,12 @@ plugins {
 
 android {
     namespace 'com.kalab.chess.stockfishengine'
-    compileSdk 37
+    compileSdk 35
 
     defaultConfig {
         applicationId "com.kalab.chess.stockfishengine"
         minSdk 21
-        targetSdk 37
+        targetSdk 35
     }
 
     buildTypes {
