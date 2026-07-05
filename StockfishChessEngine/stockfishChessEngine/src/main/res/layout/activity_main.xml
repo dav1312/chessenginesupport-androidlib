@@ -17,7 +17,7 @@
             android:id="@+id/logoImage"
             android:layout_width="120dp"
             android:layout_height="120dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp"
             android:contentDescription="Stockfish Logo"
             android:src="@drawable/ic_launcher" />
@@ -30,7 +30,7 @@
             android:textSize="32sp"
             android:textStyle="bold"
             android:textColor="#43ad6a"
-            android:layout_bottom="4dp" />
+            android:layout_marginBottom="4dp" />
 
         <!-- Subtitle -->
         <TextView
