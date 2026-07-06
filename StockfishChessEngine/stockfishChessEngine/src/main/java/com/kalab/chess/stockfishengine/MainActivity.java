@@ -30,11 +30,13 @@ public class MainActivity extends Activity {
 	private ProgressBar progressReleases;
 	private TextView txtReleasesError;
 	private Button btnRetryReleases;
+	private Button btnRefreshReleases;
 	private LinearLayout containerReleases;
 
 	private ProgressBar progressBlog;
 	private TextView txtBlogError;
 	private Button btnRetryBlog;
+	private Button btnRefreshBlog;
 	private LinearLayout containerBlog;
 
 	@Override
@@ -59,12 +61,14 @@ public class MainActivity extends Activity {
 		progressReleases = findViewById(R.id.progressReleases);
 		txtReleasesError = findViewById(R.id.txtReleasesError);
 		btnRetryReleases = findViewById(R.id.btnRetryReleases);
+		btnRefreshReleases = findViewById(R.id.btnRefreshReleases);
 		containerReleases = findViewById(R.id.containerReleases);
 
 		// Blog elements
 		progressBlog = findViewById(R.id.progressBlog);
 		txtBlogError = findViewById(R.id.txtBlogError);
 		btnRetryBlog = findViewById(R.id.btnRetryBlog);
+		btnRefreshBlog = findViewById(R.id.btnRefreshBlog);
 		containerBlog = findViewById(R.id.containerBlog);
 
 		// Request POST_NOTIFICATIONS permission on Android 13+
@@ -144,7 +148,21 @@ public class MainActivity extends Activity {
 			}
 		});
 
+		btnRefreshReleases.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				startFetchReleases();
+			}
+		});
+
 		btnRetryBlog.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				startFetchBlog();
+			}
+		});
+
+		btnRefreshBlog.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				startFetchBlog();
@@ -176,6 +194,9 @@ public class MainActivity extends Activity {
 		progressReleases.setVisibility(View.VISIBLE);
 		txtReleasesError.setVisibility(View.GONE);
 		btnRetryReleases.setVisibility(View.GONE);
+		if (btnRefreshReleases != null) {
+			btnRefreshReleases.setEnabled(false);
+		}
 		containerReleases.removeAllViews();
 
 		executor.execute(new Runnable() {
@@ -188,6 +209,9 @@ public class MainActivity extends Activity {
 						@Override
 						public void run() {
 							progressReleases.setVisibility(View.GONE);
+							if (btnRefreshReleases != null) {
+								btnRefreshReleases.setEnabled(true);
+							}
 							if (releases == null || releases.isEmpty()) {
 								txtReleasesError.setVisibility(View.VISIBLE);
 								btnRetryReleases.setVisibility(View.VISIBLE);
@@ -205,6 +229,9 @@ public class MainActivity extends Activity {
 						@Override
 						public void run() {
 							progressReleases.setVisibility(View.GONE);
+							if (btnRefreshReleases != null) {
+								btnRefreshReleases.setEnabled(true);
+							}
 							txtReleasesError.setVisibility(View.VISIBLE);
 							txtReleasesError.setText("Error loading releases: " + e.getMessage());
 							btnRetryReleases.setVisibility(View.VISIBLE);
@@ -219,6 +246,9 @@ public class MainActivity extends Activity {
 		progressBlog.setVisibility(View.VISIBLE);
 		txtBlogError.setVisibility(View.GONE);
 		btnRetryBlog.setVisibility(View.GONE);
+		if (btnRefreshBlog != null) {
+			btnRefreshBlog.setEnabled(false);
+		}
 		containerBlog.removeAllViews();
 
 		executor.execute(new Runnable() {
@@ -231,6 +261,9 @@ public class MainActivity extends Activity {
 						@Override
 						public void run() {
 							progressBlog.setVisibility(View.GONE);
+							if (btnRefreshBlog != null) {
+								btnRefreshBlog.setEnabled(true);
+							}
 							if (blogItems == null || blogItems.isEmpty()) {
 								txtBlogError.setVisibility(View.VISIBLE);
 								btnRetryBlog.setVisibility(View.VISIBLE);
@@ -252,6 +285,9 @@ public class MainActivity extends Activity {
 						@Override
 						public void run() {
 							progressBlog.setVisibility(View.GONE);
+							if (btnRefreshBlog != null) {
+								btnRefreshBlog.setEnabled(true);
+							}
 							txtBlogError.setVisibility(View.VISIBLE);
 							txtBlogError.setText("Error loading blog posts: " + e.getMessage());
 							btnRetryBlog.setVisibility(View.VISIBLE);
