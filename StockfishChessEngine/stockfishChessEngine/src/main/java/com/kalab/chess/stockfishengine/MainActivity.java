@@ -268,14 +268,7 @@ public class MainActivity extends Activity {
 								txtBlogError.setVisibility(View.VISIBLE);
 								btnRetryBlog.setVisibility(View.VISIBLE);
 							} else {
-								int count = 0;
-								for (BlogItem item : blogItems) {
-									containerBlog.addView(createBlogView(item));
-									count++;
-									if (count >= 3) {
-										break;
-									}
-								}
+								containerBlog.addView(createBlogView(blogItems.get(0)));
 							}
 						}
 					});
